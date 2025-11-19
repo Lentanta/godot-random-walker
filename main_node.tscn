@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://db7jd1vcvtd0p"]
+[gd_scene load_steps=5 format=3 uid="uid://db7jd1vcvtd0p"]
 
 [ext_resource type="Shader" uid="uid://beh4mpfjfodu0" path="res://color_rect.gdshader" id="1_dhalm"]
 [ext_resource type="Script" uid="uid://b8qkwxtnkrrpo" path="res://square.gd" id="1_lwogq"]
+[ext_resource type="Script" uid="uid://br5kig6nuqmml" path="res://button.gd" id="2_bxfy6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bxfy6"]
 shader = ExtResource("1_dhalm")
@@ -39,18 +40,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -31.0
+offset_right = 71.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Toggle VHS effect"
+script = ExtResource("2_bxfy6")
+
 [node name="Square" type="Node2D" parent="."]
 script = ExtResource("1_lwogq")
-SQRT_SiZE = 32
 square_pos = Vector2(0, 0)
 color = Color(0.37800285, 0.7200076, 0.92653865, 1)
 
 [node name="Square2" type="Node2D" parent="."]
 script = ExtResource("1_lwogq")
-SQRT_SiZE = 16
-square_pos = Vector2(0, 320)
+square_pos = Vector2(1890, 0)
 
 [node name="Square3" type="Node2D" parent="."]
 script = ExtResource("1_lwogq")
-SQRT_SiZE = 8
-color = Color(0.77618337, 0.48143828, 0.9689025, 1)
+square_pos = Vector2(0, 1060)
+color = Color(0.7592979, 0.6130427, 0.93966687, 1)
+
+[node name="Square4" type="Node2D" parent="."]
+script = ExtResource("1_lwogq")
+square_pos = Vector2(1890, 1050)
+color = Color(0.3623615, 0.8433892, 0.41414726, 1)
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

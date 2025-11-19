@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var SQRT_SiZE = 0
+@export var SQRT_SiZE = 30
 @export var square_pos = Vector2(320, 320)
 
 @export var color:Color = Color.WHITE
@@ -28,8 +28,9 @@ func _process(delta: float) -> void:
 		square_pos.x -= SQRT_SiZE
 		
 	path.append(square_pos)
-	if path.size() > 10:
-		path.pop_front()
+	if path.size() > 1000:
+		#path.pop_front()
+		path = []
 		
 	queue_redraw()
 

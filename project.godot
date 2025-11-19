@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="The nature of code"
+config/name="Random walker"
 run/main_scene="uid://db7jd1vcvtd0p"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=320
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/resizable=false
 window/stretch/mode="viewport"
